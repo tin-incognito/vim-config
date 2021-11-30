@@ -3,24 +3,36 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/nerdcommenter'
 Plug 'mileszs/ack.vim'
-Plug 'dracula/vim',{ 'as': 'dracula' }
 Plug 'pgavlin/pulumi.vim'
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
-Plug 'preservim/nerdcommenter'
 Plug 'rking/ag.vim'
-Plug 'jaredgorski/fogbell.vim'
 Plug 'olivertaylor/vacme'
-Plug 'tomlion/vim-solidity'
 Plug 'buoto/gotests-vim'
 Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
+Plug 'pbrisbin/vim-colors-off'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 call plug#end()
 
-colorscheme fogbell
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
+
+"if exists('+termguicolors')
+  "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  "set termguicolors
+"endif
+
+" lightline
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
+
 syntax on
 syntax enable
-set number
+set number relativenumber
 set autoread
 set autowrite
 set autoindent
@@ -143,3 +155,4 @@ highlight Blamer guifg=darkgrey
 
 "Golang config"
 let g:go_fmt_command = "goimports"
+"let g:go_gopls_enabled = 0
