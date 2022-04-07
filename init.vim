@@ -13,13 +13,18 @@ Plug 'APZelos/blamer.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'pbrisbin/vim-colors-off'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'rust-lang/rust.vim'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 syntax on
 set t_Co=256
 set cursorline
-colorscheme onehalflight
-let g:airline_theme='onehalfdark'
+set background=light
+colorscheme PaperColor
+
+"colorscheme onehalflight
+"let g:airline_theme='onehalfdark'
 
 "if exists('+termguicolors')
   "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -27,10 +32,9 @@ let g:airline_theme='onehalfdark'
   "set termguicolors
 "endif
 
-" lightline
-" let g:lightline = { 'colorscheme': 'onehalfdark' }
+"lightline
+"let g:lightline = { 'colorscheme': 'onehalfdark' }
 
-syntax on
 syntax enable
 set number relativenumber
 set autoread
@@ -156,3 +160,5 @@ highlight Blamer guifg=darkgrey
 "Golang config"
 let g:go_fmt_command = "goimports"
 "let g:go_gopls_enabled = 0
+"
+vmap § <esc>
