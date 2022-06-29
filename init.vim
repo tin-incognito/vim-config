@@ -5,7 +5,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'mileszs/ack.vim'
 Plug 'pgavlin/pulumi.vim'
 Plug 'fatih/vim-go'
-Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'npm install --frozen-lockfile'}
 Plug 'rking/ag.vim'
 Plug 'olivertaylor/vacme'
 Plug 'buoto/gotests-vim'
@@ -15,6 +15,7 @@ Plug 'pbrisbin/vim-colors-off'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'rust-lang/rust.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'TovarishFin/vim-solidity'
 call plug#end()
 
 syntax on
@@ -22,18 +23,6 @@ set t_Co=256
 set cursorline
 set background=light
 colorscheme PaperColor
-
-"colorscheme onehalflight
-"let g:airline_theme='onehalfdark'
-
-"if exists('+termguicolors')
-  "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  "set termguicolors
-"endif
-
-"lightline
-"let g:lightline = { 'colorscheme': 'onehalfdark' }
 
 syntax enable
 set number relativenumber
@@ -59,7 +48,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-p> :FZF<CR>
 nnoremap <silent> <space> :nohlsearch<CR>
-vmap <C-c> "*y
+
 " -------------------------------------------------------------------------------------------------
 " coc.nvim default settings
 " -------------------------------------------------------------------------------------------------
@@ -161,4 +150,10 @@ highlight Blamer guifg=darkgrey
 let g:go_fmt_command = "goimports"
 "let g:go_gopls_enabled = 0
 "
-vmap § <esc>
+
+vmap <C-x> <esc>
+omap <C-x> <esc>
+cmap <C-x> <esc>
+imap <C-x> <esc>
+vmap <leader>c "*y
+nmap <leader>v "*p
